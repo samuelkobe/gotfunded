@@ -1,0 +1,173 @@
+{
+    "key": "group_63190f2a8ce7b",
+    "title": "Value Add Points",
+    "fields": [
+        {
+            "key": "field_63190f38f6570",
+            "label": "Block Title",
+            "name": "block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_631918e8873f8",
+            "label": "Block Header",
+            "name": "block_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63191c01785ca",
+            "label": "Block Content",
+            "name": "block_content",
+            "type": "textarea",
+            "instructions": "Add a sentence or two here (Max 256 characters).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 256,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6319218a63505",
+            "label": "Points",
+            "name": "points",
+            "type": "repeater",
+            "instructions": "Add between 3-6 Value Add Points.\r\n<br>\r\nPoints go from left to right and then down and across again like so:\r\n<br>\r\n[1] [2] [3]<br>\r\n[4] [5] [6]",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_6319219563506",
+            "min": 3,
+            "max": 6,
+            "layout": "table",
+            "button_label": "Add Value",
+            "sub_fields": [
+                {
+                    "key": "field_6319219563506",
+                    "label": "Header",
+                    "name": "header",
+                    "type": "text",
+                    "instructions": "One word header (Max 24 characters).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 24
+                },
+                {
+                    "key": "field_6319219b63507",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "text",
+                    "instructions": "Keep this content short and to the point when possible (Max 256 characters).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 256
+                }
+            ]
+        },
+        {
+            "key": "field_63191a02862bd",
+            "label": "Bottom Spacing",
+            "name": "bottom_spacing",
+            "type": "radio",
+            "instructions": "Choose how much space should be under the header (Default is 0);",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "[0px]": "none (0px)",
+                "[16px]": "xs (16px)",
+                "[32px]": "sm (32px)",
+                "[48px]": "md (48px)",
+                "[64px]": "lg (64px)",
+                "[80px]": "xl (80px)",
+                "[96px]": "2xl (96px)",
+                "[112px]": "3xl (112px)",
+                "[128px]": "4xl (128px)",
+                "[156px]": "5xl (156px)"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/value-add-points"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1662591751
+}

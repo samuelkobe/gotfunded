@@ -1,0 +1,19 @@
+.theme-button {
+    @apply w-fit justify-center pt-[6px] xl:pt-3 xl:pb-1 px-6 xl:px-8 rounded-full no-underline shadow-2xl inline-flex text-white font-sans font-semibold text-xl xl:text-2xl transition-colors duration-300 cursor-pointer;
+}
+
+.theme-button.main {
+    @apply bg-brand-fourth text-white hover:bg-brand-fourth_dark shadow-custom shadow-brand-fourth_dark;
+}
+
+.theme-button.alt {
+    @apply bg-brand-third text-white hover:bg-brand-third_dark shadow-custom shadow-brand-third_dark;
+}
+
+.theme-button.tertiary {
+    @apply bg-brand-dark_grey text-white hover:bg-brand-darkest_grey shadow-custom shadow-brand-darkest_grey;
+}
+
+.theme-button.header {
+    @apply text-xl xl:text-2xl m-0 shadow-sm #{!important};
+}

@@ -1,0 +1,7 @@
+.pricing-button {
+    @apply bg-brand-light_grey hover:opacity-90 flex items-center justify-center pt-1 lg:pt-2 w-[120px] lg:w-60 h-10 lg:h-20 text-base lg:text-[32px] lg:leading-[48px] font-sans text-black font-bold border-none duration-200 transition-opacity;
+}
+
+.pricing-button.active {
+    @apply bg-white z-10 hover:opacity-100;
+}

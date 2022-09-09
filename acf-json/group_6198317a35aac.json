@@ -1,0 +1,51 @@
+{
+    "key": "group_6198317a35aac",
+    "title": "TEMPLATE: Color Choices",
+    "fields": [
+        {
+            "key": "field_61982eb49ff1e",
+            "label": "Colors",
+            "name": "colors",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "third": "<span style=\"color:#006aff; font-weight: bold;\">Blue<\/span>",
+                "fourth": "<span style=\"color:#e22d57; font-weight: bold;\">Pink<\/span>",
+                "light_grey": "<span style=\"color:#B1B1B1; font-weight: bold;\">Light Grey<\/span>",
+                "black": "<span style=\"color:#000000; font-weight: bold;\">Black<\/span>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "main",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 9999,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1662677332
+}

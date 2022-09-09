@@ -1,0 +1,434 @@
+{
+    "key": "group_631a4729d2f46",
+    "title": "Pricing",
+    "fields": [
+        {
+            "key": "field_631a5f38fc6cf",
+            "label": "Pricing settings",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This pricing block is designed to be a gateway to the product pages. Depending on the users choices, different product\/subscription page links will be created to correctly navigate the customer.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_631a61fb70b29",
+            "label": "Top",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_631a4729d52ca",
+            "label": "Block Header",
+            "name": "block_header",
+            "type": "text",
+            "instructions": "Block header (Max 64 Characters).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 64
+        },
+        {
+            "key": "field_631a613270b28",
+            "label": "Left Button Text",
+            "name": "left_button_text",
+            "type": "text",
+            "instructions": "Short one word button label (Max characters 12).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 12
+        },
+        {
+            "key": "field_631a628684123",
+            "label": "Right Button Text",
+            "name": "right_button_text",
+            "type": "text",
+            "instructions": "Short one word button label (Max characters 12).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 12
+        },
+        {
+            "key": "field_631a629184124",
+            "label": "Discount Text",
+            "name": "discount_text",
+            "type": "text",
+            "instructions": "Short discount message i.e. 'save 50%' or '2 months free', etc. (Max 24 characters).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 24
+        },
+        {
+            "key": "field_631a620570b2a",
+            "label": "Subscriptions",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_631a6908ce4fc",
+            "label": "Subscription Types",
+            "name": "subscription_types",
+            "type": "flexible_content",
+            "instructions": "Add subscription types. 'Basic', 'Growth', 'Premium' etc. and their details.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_631a6910314ee": {
+                    "key": "layout_631a6910314ee",
+                    "name": "subscription_type",
+                    "label": "Subscription Type",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_631a68adfddbb",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "Add a short subscription name. i.e. 'Basic', 'Growth', 'Premium' etc. (Max 16 characters).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 16
+                        },
+                        {
+                            "key": "field_631a720254055",
+                            "label": "Colors",
+                            "name": "colors",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "third": "<span style=\"color:#006aff; font-weight: bold;\">Blue<\/span>",
+                                "fourth": "<span style=\"color:#e22d57; font-weight: bold;\">Pink<\/span>",
+                                "light_grey": "<span style=\"color:#B1B1B1; font-weight: bold;\">Light Grey<\/span>",
+                                "black": "<span style=\"color:#000000; font-weight: bold;\">Black<\/span>"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "third",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_631a69a426591",
+                            "label": "Monthly Price",
+                            "name": "monthly_price",
+                            "type": "text",
+                            "instructions": "Add monthly price (Max 12 character).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 12
+                        },
+                        {
+                            "key": "field_631a6a8626595",
+                            "label": "Annual Price",
+                            "name": "annual_price",
+                            "type": "text",
+                            "instructions": "Add annual price (Max 12 character).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 12
+                        },
+                        {
+                            "key": "field_631a69d426592",
+                            "label": "Tag",
+                            "name": "tag",
+                            "type": "text",
+                            "instructions": "Short selling tag right below the price. This should entice the customer (optional). (Max 64 characters).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 64
+                        },
+                        {
+                            "key": "field_631a6a2f26593",
+                            "label": "Monthly Button",
+                            "name": "monthly_button",
+                            "type": "link",
+                            "instructions": "Add the button link text and URL. Set this link's URL to the product page url for the Monthly version of this product.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_631a6ad126596",
+                            "label": "Annual Button",
+                            "name": "annual_button",
+                            "type": "link",
+                            "instructions": "Add the button link text and URL. Set this link's URL to the product page url for the Annual version of this product.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_631a804e55447",
+                            "label": "Value Added Pointed Title",
+                            "name": "value_added_pointed_title",
+                            "type": "text",
+                            "instructions": "Add a short title for the Values added with this subscription. i.e. 'Access to:' (Max 24 characters).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_631a7e8797d39",
+                            "label": "Value Point",
+                            "name": "value_point",
+                            "type": "repeater",
+                            "instructions": "Add all the value points for each subscription.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 16,
+                            "layout": "table",
+                            "button_label": "Add Point",
+                            "sub_fields": [
+                                {
+                                    "key": "field_631a7ea097d3a",
+                                    "label": "Point",
+                                    "name": "point",
+                                    "type": "text",
+                                    "instructions": "Add a value point for this subscription type (Max 256 characters).",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 256
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Subscription Type",
+            "min": 1,
+            "max": 4
+        },
+        {
+            "key": "field_631a621570b2b",
+            "label": "Annual",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_631a621d70b2c",
+            "label": "Spacing",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_631a4729d52dc",
+            "label": "Bottom Spacing",
+            "name": "bottom_spacing",
+            "type": "radio",
+            "instructions": "Choose how much space should be under the header (Default is 0);",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "[0px]": "none (0px)",
+                "[16px]": "xs (16px)",
+                "[32px]": "sm (32px)",
+                "[48px]": "md (48px)",
+                "[64px]": "lg (64px)",
+                "[80px]": "xl (80px)",
+                "[96px]": "2xl (96px)",
+                "[112px]": "3xl (112px)",
+                "[128px]": "4xl (128px)",
+                "[156px]": "5xl (156px)"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/pricing"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1662681242
+}
