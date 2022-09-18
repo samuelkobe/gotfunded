@@ -32,8 +32,20 @@ if ( ! empty( $block['align'] ) ) {
 	}
 </style>
 
+<?php 
+$block_id = '';
+if ( have_rows( 'id' ) ) : ?>
+    <?php while ( have_rows( 'id' ) ) : the_row(); ?>
+        <?php if ( get_sub_field( 'block_id_toggle' ) == 1 ) : ?>
+            <?php
+                $block_anchor = formatAnchor(get_sub_field( 'block_id' ));
+                $block_id = $block_anchor;
+                ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
 
-<section class="flex flex-row items-start justify-start bg-transparent relative text-white bg-black pt-0 lg:pt-16 mb-<?php echo get_field( 'bottom_spacing' ); ?>"> 
+<section id="<?php echo $block_id ?>" class="flex flex-row items-start justify-start bg-transparent relative text-white bg-black pt-0 lg:pt-16 mb-<?php echo get_field( 'bottom_spacing' ); ?>"> 
     <div class="w-full flex flex-col lg:flex-row relative">
 
         <div class="w-full lg:w-1/3">
@@ -86,11 +98,28 @@ if ( ! empty( $block['align'] ) ) {
                 </div>
             <?php endif; ?>
 
+            <?php if ( have_rows( 'block_media' ) ) : ?>
+                <?php while ( have_rows( 'block_media' ) ) : the_row(); ?>
 
-                <?php $block_media = get_field( 'block_media' ); ?>
-                <?php if ( $block_media ) : ?>
-                    <img class="rounded-tr-xl rounded-br-xl aspect-square object-cover w-11/12 sm:w-3/4 lg:w-[640px] max-w-full" src="<?php echo esc_url( $block_media['url'] ); ?>" alt="<?php echo esc_attr( $block_media['alt'] ); ?>" />
-                <?php endif; ?>
+                    <?php if ( get_sub_field( 'block_preview_image' ) ) : ?>
+                        <?php $block_poster = get_sub_field( 'block_preview_image' ); ?>
+                    <?php endif ?>
+
+                    <?php if ( get_sub_field( 'block_webm_video_file' ) ) : ?>
+                        <?php $block_webm = get_sub_field( 'block_webm_video_file' ); ?>
+                    <?php endif; ?>
+
+                    <?php if ( get_sub_field( 'block_mp4_video_file' ) ) : ?>
+                        <?php $block_mp4 = get_sub_field( 'block_mp4_video_file' ); ?>
+                    <?php endif; ?>
+
+                    <video aria-hidden="true" poster="<?php echo $block_poster; ?>" prefix="none" loop playsinline autoplay class="rounded-tr-xl rounded-br-xl aspect-square object-cover w-11/12 sm:w-3/4 lg:w-[640px] max-w-full" width="789" height="625">
+                        <source type="video/webm" src="<?php echo $block_webm; ?>">
+                        <source type="video/mp4" src="<?php echo $block_mp4; ?>">
+                    </video>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
 
 
             </div>

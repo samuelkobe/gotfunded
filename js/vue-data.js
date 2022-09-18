@@ -3,6 +3,7 @@ Vue.createApp({
     return {
       menuOpen: false,
       videoOpen: false,
+      annualSelection: false,
       view: {
         atTopOfPage: true,
       },
@@ -19,13 +20,19 @@ Vue.createApp({
     toggleVideo() {
       this.videoOpen = !this.videoOpen;
     },
+    toggleMonthly() {
+      this.annualSelection = false;
+    },
+    toggleAnnual() {
+      this.annualSelection = true;
+    },
     goto(refName) {
       var element = this.$refs[refName];
       var top = element.offsetTop;
 
       window.scrollTo({
         left: 0,
-        top: top - 64,
+        top: top - 96,
         behavior: "smooth",
       });
     },

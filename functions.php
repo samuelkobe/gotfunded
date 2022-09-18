@@ -239,6 +239,9 @@ function footer_scripts()
     wp_register_script('vue-settings', get_template_directory_uri() . '/js/vue-data.js', array(), '1.0.0'); // Custom scripts
     wp_enqueue_script('vue-settings'); // Enqueue
 
+	wp_register_script('scroll-nav', get_template_directory_uri() . '/js/scroll.js', array(), '1.0.0'); // Custom scripts
+	wp_enqueue_script('scroll-nav'); // Enqueue
+
     wp_register_script('faqs', get_template_directory_uri() . '/js/faqs.js', array(), '1.0.0'); // Custom scripts
     wp_enqueue_script('faqs'); // Enqueue
 }
@@ -436,7 +439,8 @@ function webokstarter_wp_gravatar ($avatar_defaults)
 // Remove and add custom navigation classes - Web Ok
 function add_link_atts($atts, $item) {
   $atts['class'] = "menu-anchor"; // styles for anchors in menu.
-  $atts['data-title'] = $item->title; // gives menu <a> a data attribute for the title of the page
+  $dataTitle = formatAnchor($item->title);
+  $atts['data-title'] = $dataTitle; // gives menu <a> a data attribute for the title of the page
   return $atts;
 }
 
@@ -479,15 +483,15 @@ function webokstarter_admin_bar_render() {
 }
 
 /*------------------------------------*\
-	URLs formatted with hyphens(-)
+	Anchors formatted with hyphens(-) instead of spaces
 \*------------------------------------*/
-// function formatUrl($str, $sep='-')
-// {
-//         $res = strtolower($str);
-//         $res = preg_replace('/[^[:alnum:]]/', ' ', $res);
-//         $res = preg_replace('/[[:space:]]+/', $sep, $res);
-//         return trim($res, $sep);
-// }
+function formatAnchor($str, $sep='-')
+{
+        $res = strtolower($str);
+        $res = preg_replace('/[^[:alnum:]]/', ' ', $res);
+        $res = preg_replace('/[[:space:]]+/', $sep, $res);
+        return trim($res, $sep);
+}
 
 /*------------------------------------*\
 	Web Ok - User restrictions - Requires Plugin 'members'

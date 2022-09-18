@@ -32,7 +32,20 @@ if ( ! empty( $block['align'] ) ) {
 	}
 </style>
 
-<section class="flex flex-row items-center justify-start bg-transparent relative mb-<?php echo get_field( 'bottom_spacing' ); ?>">
+<?php 
+$block_id = '';
+if ( have_rows( 'id' ) ) : ?>
+    <?php while ( have_rows( 'id' ) ) : the_row(); ?>
+        <?php if ( get_sub_field( 'block_id_toggle' ) == 1 ) : ?>
+            <?php
+                $block_anchor = formatAnchor(get_sub_field( 'block_id' ));
+                $block_id = $block_anchor;
+                ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<section id="<?php echo $block_id ?>" class="flex flex-row items-center justify-start bg-transparent relative mb-<?php echo get_field( 'bottom_spacing' ); ?>">
     <div class="absolute inset-0 bg-brand-fourth opacity-25 flex"></div>
     <div class="absolute overflow-hidden right-0 top-0 w-full h-full z-0">
         <div class="absolute -top-[12.5%] -right-[10%] h-[25%] w-[50%] bg-white opacity-[5%] rounded-full"></div>

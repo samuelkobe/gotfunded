@@ -33,7 +33,21 @@ if ( ! empty( $block['align'] ) ) {
 </style>
 
 
-<section class="flex bg-black text-white relative mb-<?php echo get_field( 'bottom_spacing' ); ?>">
+
+<?php 
+$block_id = '';
+if ( have_rows( 'id' ) ) : ?>
+    <?php while ( have_rows( 'id' ) ) : the_row(); ?>
+        <?php if ( get_sub_field( 'block_id_toggle' ) == 1 ) : ?>
+            <?php
+                $block_anchor = formatAnchor(get_sub_field( 'block_id' ));
+                $block_id = $block_anchor;
+                ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<section id="<?php echo $block_id; ?>" class="flex bg-black text-white relative mb-<?php echo get_field( 'bottom_spacing' ); ?>">
     <div class="contained">
 
         <div class="flex w-full justify-center text-center">
@@ -48,11 +62,10 @@ if ( ! empty( $block['align'] ) ) {
 
             <div class="w-full h-auto mt-4 md:mt-8 mb-12 md:mb-20 px-6 grid grid-flow-row-dense grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-y-4 md:gap-0 relative">
                 <?php while ( have_rows( 'steps' ) ) : the_row(); ?>
-                    <div class="flex flex-col items-center w-auto">
-                        <?php $step_icon_image = get_sub_field( 'step_icon_image' ); ?>
-                        <?php if ( $step_icon_image ) : ?>
-                            <img class="w-40 h-40 lg:w-56 lg:h-56 object-contain" src="<?php echo esc_url( $step_icon_image['url'] ); ?>" alt="<?php echo esc_attr( $step_icon_image['alt'] ); ?>" />
-                        <?php endif; ?>
+                    <div class="flex flex-col items-center w-auto mt-8 lg:mt-24">
+                        <div class="w-full h-32 text-6xl lg:text-7xl flex items-center justify-center pb-4 lg:pb-16 text-white">
+                            <?php the_sub_field( 'icon' ); ?>
+                        </div>
                         <div class="flex flex-col justify-start items-center -mt-4">
                             <h4 class="mb-2 font-title font-normal text-2xl lg:text-3xl theme-override"><?php the_sub_field( 'title' ); ?></h4>
                             <p class="font-sans font-normal text-brand-light_grey text-base leading-normal text-center w-3/4"><?php the_sub_field( 'content' ); ?></p>

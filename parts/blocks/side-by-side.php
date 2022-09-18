@@ -48,7 +48,20 @@ if ( ! empty( $block['align'] ) ) {
         <?php endwhile; ?>
     <?php endif; ?>
 
-<section class="w-full pt-[96px] lg:pt-<?php echo get_field( 'top_spacing' ); ?> pb-<?php echo get_field( 'bottom_spacing' ); ?> lg:px-8">
+<?php 
+$block_id = '';
+if ( have_rows( 'id' ) ) : ?>
+    <?php while ( have_rows( 'id' ) ) : the_row(); ?>
+        <?php if ( get_sub_field( 'block_id_toggle' ) == 1 ) : ?>
+            <?php
+                $block_anchor = formatAnchor(get_sub_field( 'block_id' ));
+                $block_id = $block_anchor;
+            ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<section id="<?php echo $block_id ?>" class="w-full pt-[96px] lg:pt-<?php echo get_field( 'top_spacing' ); ?> pb-<?php echo get_field( 'bottom_spacing' ); ?> lg:px-8">
 
 	<?php if ( get_field( 'image_orientation_side_by_side' ) == 1 ) :
 		$image_order = 'lg:order-1';

@@ -23,6 +23,8 @@
 		<script src="https://unpkg.com/vue@3"></script>
 		<!-- <script src="https://unpkg.com/vue@3.2.33/dist/vue.global.prod.js"></script> -->
 
+		<script src="https://kit.fontawesome.com/effc7c677e.js" crossorigin="anonymous"></script>
+
 	</head>
 	<body <?php body_class(); ?>>
 		<?php if ( ! function_exists( 'wp_body_open' ) ) {
@@ -33,9 +35,9 @@
 
 	<div id="app" class="bg-black">
 					
-		<header id="header" :class="[view.atTopOfPage ? 'lg:shadow-none lg:h-28' : 'lg:shadow-xl lg:h-24']" class="w-full flex flex-wrap transition-height duration-500 h-24 lg:h-28 fixed top-0 z-50 shadow-xl" role="banner">
+		<header id="header" :class="[view.atTopOfPage ? 'lg:shadow-none' : 'lg:shadow-xl']" class="w-full flex flex-wrap transition-height duration-500 h-24 fixed top-0 z-50 shadow-xl" role="banner">
 			<nav id="nav" class="flex flex-wrap items-start lg:items-center justify-between w-full h-full relative">
-				<div :class="[view.atTopOfPage ? 'opacity-0' : 'lg:opacity-100']" class="opacity-0 absolute w-full h-full bg-gradient-to-br from-black to-black transition-opacity duration-200"></div>
+				<div class="opacity-100 absolute w-full h-full bg-gradient-to-br from-black to-black transition-opacity duration-200"></div>
 				<?php get_template_part('parts/nav') ?>
 			</nav>
 		</header>

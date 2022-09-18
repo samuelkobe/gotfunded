@@ -32,7 +32,20 @@ if ( ! empty( $block['align'] ) ) {
 	}
 </style>
 
-<section class="w-full mb-<?php echo get_field( 'bottom_spacing' ); ?>">
+<?php 
+$block_id = '';
+if ( have_rows( 'id' ) ) : ?>
+    <?php while ( have_rows( 'id' ) ) : the_row(); ?>
+        <?php if ( get_sub_field( 'block_id_toggle' ) == 1 ) : ?>
+            <?php
+                $block_anchor = formatAnchor(get_sub_field( 'block_id' ));
+                $block_id = $block_anchor;
+                ?>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<section id="<?php echo $block_id ?>" class="w-full mb-<?php echo get_field( 'bottom_spacing' ); ?>">
     <div class="bg-white relative flex flex-col items-center py-28 2xl:py-32">
         
         <div class="max-w-full w-[320px] md:w-[480px] lg:w-[640px] mx-auto mb-6 lg:mb-12">
@@ -80,7 +93,3 @@ if ( ! empty( $block['align'] ) ) {
 
     </div>
 </section>
-
-
-
-
