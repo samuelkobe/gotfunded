@@ -948,6 +948,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-32 {
   margin-top: 8rem;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -1236,6 +1239,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize {
   resize: both;
+}
+.list-disc {
+  list-style-type: disc;
 }
 .grid-flow-row {
   grid-auto-flow: row;
@@ -1772,6 +1778,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-right {
   text-align: right;
+}
+.indent-6 {
+  text-indent: 1.5rem;
 }
 .font-title {
   font-family: Anek Telugu, san-serif;
@@ -4316,6 +4325,92 @@ nav ul li ul.sub-menu li a.menu-anchor {
 .pricing-button.active:hover {
 
     opacity: 1
+}
+/*!********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/components/legal.css ***!
+  \********************************************************************************************************************************************************************/
+.legal-template {
+
+    --tw-text-opacity: 1 !important;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.legal-template h1 {
+
+    font-size: 3.75rem;
+
+    line-height: 1
+}
+
+.legal-template h2 {
+
+    font-size: 3rem;
+
+    line-height: 1
+}
+
+.legal-template h3 {
+
+    font-size: 1.875rem;
+
+    line-height: 2.25rem
+}
+
+.legal-template h4 {
+
+    font-size: 1.5rem;
+
+    line-height: 2rem
+}
+
+.legal-template p, .legal-template ul {
+
+    margin-top: 2rem;
+
+    margin-bottom: 1rem;
+
+    font-family: Khula, sans-serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.75rem
+}
+
+.legal-template h1, .legal-template h2, .legal-template h3, .legal-template h4 {
+
+    margin-top: 3rem;
+
+    margin-bottom: 1rem;
+
+    font-family: Anek Telugu, san-serif
+}
+
+.legal-template ul {
+
+    list-style-type: disc
+}
+
+.legal-template ul li {
+
+    margin-left: 1.5rem
+}
+
+@media (min-width: 1024px) {
+
+    .legal-template ul li {
+
+        margin-left: 2.5rem
+    }
+}
+
+.legal-template a {
+
+    --tw-text-opacity: 1 !important;
+
+    color: rgb(0 106 255 / var(--tw-text-opacity)) !important;
+
+    text-decoration: underline !important
 }
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/components/editor.css ***!

@@ -11,6 +11,7 @@ import '/src/styles/components/footer.css';
 import '/src/styles/components/video_embed.css';
 import '/src/styles/components/testimonials.css';
 import '/src/styles/components/pricing.css';
+import '/src/styles/components/legal.css';
 
 // Editor Override CSS
 import '/src/styles/components/editor.css';

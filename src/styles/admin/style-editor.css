@@ -4,7 +4,14 @@
 
 .editor-styles-wrapper {
     background-color: black;
+    color: #fff;
 }
+
+.editor-styles-wrapper a {
+    color: #006aff;
+    text-decoration: underline;
+}
+
 
 .video-admin, .video-admin span, .video-admin span span, .video-admin span span iframe {
     display: none !important;
