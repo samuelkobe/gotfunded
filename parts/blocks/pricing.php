@@ -54,11 +54,6 @@ if ( have_rows( 'id' ) ) : ?>
     
     <div class="container relative mx-auto flex flex-col items-center px-6 lg:px-0 py-8 lg:py-16 2xl:py-24">
         <h2 id="welcome" class="w-full text-center text-white text-3xl xl:text-4xl 2xl:text-5xl font-title font-semibold theme-override"><?php the_field( 'block_header' ); ?></h2>
-        <div class="flex flex-row justify-around items-center mt-8 lg:mt-12 relative">
-            <span class="whitespace-nowrap flex items-center z-20 justify-center absolute p-2 lg:p-3 pt-[12px] lg:pt-4 text-sans text-xs lg:text-sm font-bold -right-16 lg:-right-20 -top-[10px] lg:-top-5 w-auto h-5 lg:h-8 text-white bg-brand-third rounded-full shadow-custom shadow-brand-black"><?php the_field( 'discount_text' ); ?></span>
-            <button @click="toggleMonthly" :class="[annualSelection ? '' : 'active']" class="pricing-button rounded-tl-full rounded-bl-full"><?php the_field( 'left_button_text' ); ?></button>
-            <button @click="toggleAnnual" :class="[annualSelection ? 'active' : '']" class="pricing-button rounded-tr-full rounded-br-full"><?php the_field( 'right_button_text' ); ?></button>
-        </div>
 
         <div class="w-full mt-8 lg:mt-16 flex flex-col md:flex-row items-start justify-around gap-y-8 md:gap-y-0 md:gap-x-8 px-1/12 sm:px-1/8 md:px-0 lg:px-1/12 xl:px-1/6 2xl:px-1/4">
             <?php if ( have_rows( 'subscription_types' ) ): ?>
@@ -84,17 +79,10 @@ if ( have_rows( 'id' ) ) : ?>
                             <div class="mt-6 py-4">
                                 <h3 class="font-semibold font-title text-lg lg:text-xl text-brand-dark_grey uppercase w-full text-center"><?php the_sub_field( 'name' ); ?></h3>
 
-                                <div :class="[annualSelection ? 'hidden' : 'flex flex-row items-center justify-center']" class="sub_price monthly relative w-full my-4 text-5xl leading-none text-brand-black font-sans font-semibold" title="Price">
+                                <div class="flex flex-row items-center justify-center sub_price monthly relative w-full my-4 text-5xl leading-none text-brand-black font-sans font-semibold" title="Price">
                                     <p class="relative ml-16">
                                         $<?php the_sub_field( 'monthly_price' ); ?>
                                         <span class="text-brand-light_grey text-lg lg:text-xl -ml-2">/month</span>
-                                    </p>
-                                </div>
-
-                                <div :class="[annualSelection ? 'flex flex-row items-center justify-center' : 'hidden']" class="sub_price annual relative w-full my-4 text-5xl leading-none text-brand-black font-sans font-semibold" title="Price">
-                                    <p class="relative ml-8">
-                                        $<?php the_sub_field( 'annual_price' ); ?>
-                                        <span class="text-brand-light_grey text-lg lg:text-xl -ml-2">/year</span>
                                     </p>
                                 </div>
 
@@ -106,15 +94,8 @@ if ( have_rows( 'id' ) ) : ?>
                                 <div class="flex justify-center">
                                     <?php $monthly_button = get_sub_field( 'monthly_button' ); ?>
                                     <?php if ( $monthly_button ) : ?>
-                                        <div :class="[annualSelection ? 'hidden' : 'flex flex-row']" class="relative">
+                                        <div class="flex flex-row relative">
                                             <a class="theme-button small <?php echo $button_color; ?>" href="<?php echo esc_url( $monthly_button['url'] ); ?>" target="<?php echo esc_attr( $monthly_button['target'] ); ?>"><?php echo esc_html( $monthly_button['title'] ); ?></a>
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <?php $annual_button = get_sub_field( 'annual_button' ); ?>
-                                    <?php if ( $annual_button ) : ?>
-                                        <div :class="[annualSelection ? 'flex flex-row' : 'hidden']" class="sub_button_annual relative">
-                                            <a class="theme-button small <?php echo $button_color; ?>" href="<?php echo esc_url( $annual_button['url'] ); ?>" target="<?php echo esc_attr( $annual_button['target'] ); ?>"><?php echo esc_html( $annual_button['title'] ); ?></a>
                                         </div>
                                     <?php endif; ?>
                                 </div>

@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "This pricing block is designed to be a gateway to the product pages. Depending on the users choices, different product\/subscription page links will be created to correctly navigate the customer.",
+            "message": "This pricing block is designed to be a gateway to the Stripe product checkouts. Depending on the users choices, different product\/subscription links will be created to correctly navigate the customer to the right checkouts.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -141,63 +141,6 @@
             "prepend": "",
             "append": "",
             "maxlength": 64
-        },
-        {
-            "key": "field_631a613270b28",
-            "label": "Left Button Text",
-            "name": "left_button_text",
-            "type": "text",
-            "instructions": "Short one word button label (Max characters 12).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "35",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 12
-        },
-        {
-            "key": "field_631a628684123",
-            "label": "Right Button Text",
-            "name": "right_button_text",
-            "type": "text",
-            "instructions": "Short one word button label (Max characters 12).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "35",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 12
-        },
-        {
-            "key": "field_631a629184124",
-            "label": "Discount Text",
-            "name": "discount_text",
-            "type": "text",
-            "instructions": "Short discount message i.e. 'save 50%' or '2 months free', etc. (Max 24 characters).",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 24
         },
         {
             "key": "field_631a4729d52dc",
@@ -332,25 +275,6 @@
                             "maxlength": 12
                         },
                         {
-                            "key": "field_631a6a8626595",
-                            "label": "Annual Price",
-                            "name": "annual_price",
-                            "type": "text",
-                            "instructions": "Add annual price (Max 12 character).",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": 12
-                        },
-                        {
                             "key": "field_631a69d426592",
                             "label": "Tag",
                             "name": "tag",
@@ -359,7 +283,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -378,22 +302,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
-                        },
-                        {
-                            "key": "field_631a6ad126596",
-                            "label": "Annual Button",
-                            "name": "annual_button",
-                            "type": "link",
-                            "instructions": "Add the button link text and URL. Set this link's URL to the product page url for the Annual version of this product.",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -486,5 +395,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662708834
+    "modified": 1663960696
 }
