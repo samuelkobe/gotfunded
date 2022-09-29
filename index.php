@@ -2,7 +2,7 @@
 
 	<main role="main">
 
-		<section class="bg-white">
+		<section class="bg-slate-100">
 			<div class="w-full px-6 xl:px-6 lg:container lg:mx-auto py-36 lg:py-48 relative">
 				<div class="flex flex-row items-center justify-center h-auto">
 					<div class="w-full">
