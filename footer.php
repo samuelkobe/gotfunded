@@ -4,6 +4,19 @@
 
 				<div class="contained">
 
+					<?php if ( have_rows( 'footer_form', 'option' ) ) : ?>
+						<?php while ( have_rows( 'footer_form', 'option' ) ) : the_row(); ?>
+							<div class="flex w-full justify-center lg:justify-end">
+								<div class="w-full flex flex-col items-center lg:items-end">
+									<h3 class="w-full lg:w-auto text-center lg:text-left font-title font-medium text-lg lg:text-xl mb-2 lg:mb-4"><?php the_field( 'footer_form_title', 'option' ); ?></h3>
+									<div class="w-full flex justify-center lg:justify-end transform -translate-x-3">
+										<?php the_field( 'footer_form_field', 'option' ); ?>
+									</div>
+								</div>
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+
 					<div class="w-full flex flex-col md:flex-row md:justify-between md:flex-wrap py-4 md:py-8">
 
 						<?php // footer image part ?>

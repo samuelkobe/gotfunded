@@ -23,7 +23,7 @@
             "label": "Header Button?",
             "name": "header_button_toggle",
             "type": "true_false",
-            "instructions": "Turn header button on or off.",
+            "instructions": "Turn header menu button on or off.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -33,9 +33,9 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "On",
-            "ui_off_text": "Off"
+            "ui_off_text": "Off",
+            "ui": 1
         },
         {
             "key": "field_6271922c2fd89",
@@ -54,7 +54,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "75",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -62,10 +62,10 @@
         },
         {
             "key": "field_6266e74c94e07",
-            "label": "Footer Image",
-            "name": "footer_image",
+            "label": "Brand Image",
+            "name": "brand_image",
             "type": "image",
-            "instructions": "Add an image to the footer (It is recommended that this image be a .png or .webp file with transparent background).",
+            "instructions": "Add an image to the navigation bar and footer (It is recommended that this image be a .svg or .webp file with transparent background).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -74,7 +74,6 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -82,7 +81,8 @@
             "max_width": "",
             "max_height": "",
             "max_size": 8,
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "small"
         },
         {
             "key": "field_631280f20205c",
@@ -132,6 +132,61 @@
                         "id": ""
                     },
                     "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_634b1ded8c6c8",
+            "label": "Footer Form",
+            "name": "footer_form",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_634b0f50d9fce",
+                    "label": "Footer Form Title",
+                    "name": "footer_form_title",
+                    "type": "text",
+                    "instructions": "Add a short call to action to accompany the footer form (Max 64 characters).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 64,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_634b01af880b4",
+                    "label": "Footer Form Field",
+                    "name": "footer_form_field",
+                    "type": "wysiwyg",
+                    "instructions": "Paste the Convert Kit or Mailchimp short code here.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "delay": 0,
+                    "tabs": "text",
+                    "media_upload": 0,
+                    "toolbar": "full"
                 }
             ]
         },
@@ -413,5 +468,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662157092
+    "modified": 1665867288
 }

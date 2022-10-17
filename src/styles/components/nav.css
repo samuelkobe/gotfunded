@@ -7,11 +7,11 @@ nav ul li a.menu-anchor {
 }
 
 nav ul li a.menu-anchor:hover {
-    @apply text-brand-fourth;
+    @apply text-brand-third;
 }
 
 nav ul li.active a.menu-anchor {
-    @apply text-brand-fourth;
+    @apply text-brand-third;
 }
 
 nav ul li:hover ul.sub-menu {

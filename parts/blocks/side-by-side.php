@@ -63,6 +63,13 @@ if ( have_rows( 'id' ) ) : ?>
 
 <section id="<?php echo $block_id ?>" class="w-full pt-[96px] lg:pt-<?php echo get_field( 'top_spacing' ); ?> pb-<?php echo get_field( 'bottom_spacing' ); ?> lg:px-8">
 
+    <div class="absolute overflow-hidden right-0 top-[12vh] xl:top-[10vh] w-full h-full flex items-center z-0">
+        <div class="absolute top-[000px] -right-[45%] xl:-right-[40%] 2xl:-right-[25%] h-[25%] max-h-[160px] w-full xl:w-[85%] bg-white opacity-[5%] lg:opacity-[8%] rounded-full"></div>
+        <div class="absolute top-[235px] -right-[20%] xl:-right-[30%] 2xl:-right-[15%] h-[25%] max-h-[160px] w-full xl:w-[85%] bg-white opacity-[5%] lg:opacity-[8%] rounded-full"></div>
+        <div class="absolute top-[470px] -right-[45%] xl:-right-[40%] 2xl:-right-[25%] h-[25%] max-h-[160px] w-full xl:w-[85%] bg-white opacity-[5%] lg:opacity-[8%] rounded-full"></div>
+    </div>
+    
+
 	<?php if ( get_field( 'image_orientation_side_by_side' ) == 1 ) :
 		$image_order = 'lg:order-1';
 		$content_order = 'lg:order-3';
@@ -72,9 +79,9 @@ if ( have_rows( 'id' ) ) : ?>
 
     endif; ?>
 
-    <div class="container mx-auto flex flex-col lg:flex-row px-6 lg:px-0 py-8 lg:py-16">
+    <div class="container mx-auto flex flex-col lg:flex-row lg:gap-x-4 lg:justify-between px-6 lg:px-0 py-8 lg:py-16">
 
-        <div class="w-full lg:w-1/2 <?php echo $image_order; ?> mb-6 lg:mb-0">
+        <div class="w-full lg:w-7/12 <?php echo $image_order; ?> mb-6 lg:mb-0">
             <?php if ( have_rows( 'image_settings' ) ) : ?>
                 <?php while ( have_rows( 'image_settings' ) ) : the_row(); ?>
 
@@ -111,43 +118,50 @@ if ( have_rows( 'id' ) ) : ?>
             <?php endif; ?>
         </div>
 
-        <div class="w-0 lg:w-1/12 lg:order-2 h-10"></div>
-
         <div class="w-full lg:w-5/12 flex flex-col justify-start pt-0 lg:pt-8 <?php echo $content_order; ?>">
             <?php if ( have_rows( 'content' ) ) : ?>
                 <?php while ( have_rows( 'content' ) ) : the_row(); ?>
-                    <h2 class="mb-3 font-title font-semibold text-brand-main text-3xl lg:text-4xl 2xl:text-[44px] 2xl:leading-tight"><?php the_sub_field( 'header' ); ?></h2>
-                    <p class="text-brand-light_grey text-base texlg:text-lg 2xl:text-xl w-full lg:w-5/6 xl:w-2/3"><?php the_sub_field( 'content' ); ?></p>
+                    <h2 class="mb-3 font-title font-semibold text-brand-main text-3xl lg:text-5xl 2xl:text-6xl"><?php the_sub_field( 'header' ); ?></h2>
+                    <?php if ( get_sub_field( 'extra_content_toggle' ) == 1 ) : ?>
+                        <p class="text-brand-light_grey text-base texlg:text-lg 2xl:text-xl w-full lg:w-5/6 xl:w-2/3"><?php the_sub_field( 'content' ); ?></p>
+                    <?php endif; ?>
 
-                    <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-4 mt-4 lg:mt-6">
+                    <div class="flex flex-col space-y-3 lg:space-y-5 mt-2 lg:mt-4">
                         <?php if ( get_sub_field( 'button_toggle' ) == 1 ) : ?>
                             <?php $button_link = get_sub_field( 'button_link' ); ?>            
 
                             <?php if ( $button_link ) : ?>
                                 <div class="flex flex-row relative">
-                                    <a class="theme-button main" href="<?php echo esc_url( $button_link['url'] ); ?>" target="<?php echo esc_attr( $button_link['target'] ); ?>"><?php echo esc_html( $button_link['title'] ); ?></a>
+                                    <?php $data_title = formatAnchor($button_link['url']); ?>
+                                    <a class="theme-button main menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $button_link['url'] ); ?>" target="<?php echo esc_attr( $button_link['target'] ); ?>"><?php echo esc_html( $button_link['title'] ); ?></a>
                                 </div>
                             <?php endif; ?>
+
                         <?php endif; ?>
 
                         <?php if ( get_sub_field( 'link_toggle' ) == 1 ) : ?>
                             <?php $link = get_sub_field( 'link' ); ?>
 
                             <?php if ( $link ) : ?>
-                                <div class="flex flex-row items-center h-full relative">
-                                    <a class="underline font-sans text-white hover:text-brand-light_grey transition-colors duration-500" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+                                <div class="flex flex-row items-center h-full relative text-white">
+                                    <a class="font-sans flex flex-row items-center" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>">
+                                        <span class="text-brand-light_grey">See our</span>
+                                        <span class="mx-1"><?php echo esc_html( $link['title'] ); ?></span>
+                                        <span class="text-3xl font-light">›</span>
+                                    </a>
                                 </div>
                             <?php endif; ?>
+                            
                         <?php endif; ?>
                     </div>
 
-                    <div class="w-full lg:w-5/6 text-brand-light_grey text-[18px] mt-12 lg:mt-20">
+                    <div class="w-full lg:w-5/6 text-brand-light_grey text-sm mt-12 lg:mt-20">
                         <?php if ( get_sub_field( 'reference_toggle' ) == 1 ) : ?>
                             <div>
                                 <div><?php the_sub_field( 'reference' ); ?></div>
                                 <div class="mt-4">
-                                    <span class="text-white text-xl">&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;</span>
-                                    <span class="text-sm"><?php the_sub_field( 'reference_author' ); ?></span>
+                                    <span class="text-white text-base">&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;&#9733;&nbsp;</span>
+                                    <span class="text-[12px]"><?php the_sub_field( 'reference_author' ); ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>

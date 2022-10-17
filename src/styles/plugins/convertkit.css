@@ -1,0 +1,50 @@
+form.seva-form.formkit-form {
+    @apply flex w-full h-11 justify-center lg:justify-end relative #{!important};
+}
+
+.formkit-form>div {
+    @apply flex flex-nowrap justify-center relative w-full lg:w-fit h-11 p-0 my-0 mx-1/8 md:mx-1/4 lg:mx-0 #{!important};
+}
+
+.formkit-field {
+    @apply flex mr-2 relative #{!important};
+}
+
+div.seva-fields.formkit-fields {
+    @apply w-full min-w-1/2 lg:w-auto lg:flex lg:justify-center absolute right-0 #{!important}
+}
+
+.formkit-field input {
+    @apply w-full sm:w-56 min-w-1/2 lg:w-64 rounded-tl-full rounded-bl-full h-11 pt-4 px-4 #{!important};
+}
+
+button.formkit-submit {
+    @apply w-fit h-11 p-0 m-0 overflow-hidden absolute -right-6 sm:-right-5 lg:-right-3 hover:-right-8 sm:hover:-right-6 transition-all justify-center rounded-full no-underline inline-flex font-sans font-semibold duration-300 cursor-pointer text-xl xl:text-2xl bg-brand-fourth text-white hover:bg-brand-fourth_dark shadow-custom shadow-brand-fourth_dark #{!important};
+}
+
+.formkit-submit span {
+    @apply w-full h-full #{!important};
+}
+
+.formkit-powered-by-convertkit-container {
+    @apply hidden #{!important};
+}
+
+.formkit-alert-success {
+    @apply h-11 m-0 #{!important};
+}
+
+.grecaptcha-badge {
+  -webkit-animation: moverecaptcha 2.5s forwards;
+  /* for less modern browsers */
+  animation: moverecaptcha 2.5s forwards;
+  animation-delay: 2s;
+}
+@keyframes moverecaptcha {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

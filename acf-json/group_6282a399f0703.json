@@ -99,15 +99,34 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
+            "maxlength": 32,
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": 32
+            "append": ""
+        },
+        {
+            "key": "field_63376bbeb1b68",
+            "label": "Title 2",
+            "name": "title_two",
+            "type": "text",
+            "instructions": "Title (Max 32 Characters).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 32,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6317c9ae8cb40",
@@ -118,15 +137,15 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "12.5",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "On",
-            "ui_off_text": "Off"
+            "ui_off_text": "Off",
+            "ui": 1
         },
         {
             "key": "field_6282a414ff2b6",
@@ -145,15 +164,111 @@
                 ]
             ],
             "wrapper": {
-                "width": "75",
+                "width": "37.5",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
             "maxlength": 256,
             "rows": 4,
+            "placeholder": "",
             "new_lines": "br"
+        },
+        {
+            "key": "field_63376c7c068b5",
+            "label": "Content Off",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6317c9ae8cb40",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "message": "Content is off.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63376bc7b1b69",
+            "label": "Content 2?",
+            "name": "content_toggle_two",
+            "type": "true_false",
+            "instructions": "Toggle extra content on or off. Off by default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "12.5",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_63376bccb1b6a",
+            "label": "Content 2",
+            "name": "content_two",
+            "type": "textarea",
+            "instructions": "Title (Max 256 Characters).",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63376bc7b1b69",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 256,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_63376c84068b6",
+            "label": "Content 2 Off",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63376bc7b1b69",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "message": "Content 2 is off.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_6282a3a3ff2b3",
@@ -164,7 +279,22 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_63376bd6b1b6b",
+            "label": "Button 2",
+            "name": "button_two",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -221,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662708936
+    "modified": 1664576744
 }

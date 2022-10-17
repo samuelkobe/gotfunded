@@ -2,82 +2,62 @@
 
 	<main role="main">
 		<!-- section -->
-		<section class="bg-white">
+		<section class="bg-white pt-36 lg:pt-48 pb-24">
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<div class="flex relative w-full mt-16 lg:mt-0 mb-6 lg:mb-12 overflow-hidden h-auto lg:h-[50vh] min-h-[280px] md:min-h-[320px] xl:min-h-[480px]">
-					<div class="absolute left-0 top-0 h-full w-full bg-black z-10 opacity-40 pointer-events-none"></div>
+				<?php
+					$get_author_id = get_the_author_meta('ID');
+					$get_author_gravatar = get_avatar_url($get_author_id, array('size' => 450));
+					$get_author_description = get_the_author_meta( 'user_description', $post->post_author );
+				?>
 
-					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-							<?php the_post_thumbnail('full', array('class' => 'absolute inset-0 w-full h-full object-cover mix-blend-normal theme-override')); // Fullsize image for the single post ?>
+				<div class="px-6 lg:px-0 lg:container lg:mx-auto w-full flex flex-col xl:px-1/12">
+					
+					<?php // DATE, TITLE, AUTHOR SECTION ?>
+					<div class="w-full flex flex-col lg:items-center">
+						<p class="text-sm lg:text-base text-gray-500 font-sans font-semibold w-fit justify-center pt-1 px-3 rounded-full bg-gray-200">Posted on <?php the_time('F j, Y'); ?></p>
+
+						<h1 class="text-4xl lg:text-6xl 2xl:text-7xl text-brand-black font-title font-bold mt-4 lg:mt-8"><?php the_title(); ?></h1>
+
+						<div class="flex flex-row items-center mt-2 lg:mt-1">
+							<?php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-8 lg:w-12 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
+							<p class="text-sm lg:text-base font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?php the_author(); ?></p>
+						</div>
+					</div>
+
+					<?php // IMAGE SECTION ?>
+					<div class="flex relative w-full mt-6 lg:mt-10 overflow-hidden h-auto lg:h-[30vh] min-h-[280px] md:min-h-[320px] xl:min-h-[360px] rounded-lg">
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+								<?php the_post_thumbnail('full', array('class' => 'absolute inset-0 w-full h-full object-cover mix-blend-normal theme-override')); // Fullsize image for the single post ?>
+						<?php endif; ?>
+					</div>
+
+
+					<div class="my-6 lg:my-16 blog">
+						<?php the_content(); // Dynamic Content ?>
+					</div>
+
+					<div class="pt-4 lg:pt-8 border-t-2 flex flex-col items-center lg:items-start lg:flex-row lg:gap-x-16">
+						<div class="w-full lg:w-1/5 flex flex-row justify-center lg:justify-start items-center mt-1 mb-6 lg:mb-0">
+							<?php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-16 h-16 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
+							<p class="text-base lg:text-lg font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?php the_author(); ?></p>
+						</div>
+						<div class="w-full lg:w-4/5">
+							<p class="text-base lg:text-lg text-brand-dark_grey"><?php echo $get_author_description; ?></p>
+						</div>
+					</div>
+
+					<?php // EDIT SECTION ?>
+					<?php if(current_user_can('editor') || current_user_can('administrator')) : ?>
+						<div class="text-brand-third font-title text-lg lg:text-xl mt-8 lg:mt-16">
+							<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+						</div>
 					<?php endif; ?>
 
-					<div class="w-full py-8 md:py-16 lg:mt-0 px-6 lg:px-0 lg:container lg:mx-auto flex flex-col items-start justify-center relative z-20 text-white">
-
-						<div class="w-full order-2 relative">
-							<h1 class="font-title capitalize lg:mt-0 text-4xl lg:text-6xl 2xl:text-8xl leading-none lg:leading-tight xl:leading-snug"><?php the_title(); ?></h1>
-							<p class="font-normal text-lg lg:text-xl 2xl:text-2xl w-full md:w-5/6 lg:w-3/4 "><?php the_time('M j, Y'); ?></p>
-						</div>
-
-						<div class="categories order-3 justify-self-end absolute bottom-6 lg:bottom-8"><?php the_category('&#32');?></div>
-
-					</div>
-					
 				</div>
 
-				<div class="px-6 lg:px-0 lg:container lg:mx-auto w-full flex flex-col lg:flex-row gap-x-1/12">
-					<div class="w-full lg:w-3/4">
-
-						<div class="flex flex-row items-center text-brand-black text-lg">
-							<a class="text-brand-fourth underline" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Posts</a>
-							<span class="block px-2 text-2xl">&rsaquo;</span>
-							<h2 class="capitalize"><?php the_title(); ?></h2>
-						</div>
-
-						<div class="my-6 lg:my-12 blog">
-							<?php the_content(); // Dynamic Content ?>
-						</div>
-
-
-						<?php if(current_user_can('editor') || current_user_can('administrator')) : ?>
-							<div class="text-brand-fourth font-title text-lg lg:text-xl my-6">
-								<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-							</div>
-						<?php endif; ?>
-
-					</div>
-
-					<div class="w-full flex flex-col lg:w-1/4 text-brand-black">
-						
-						<div class="flex flex-col lg:items-center mb-6">
-							<h4 class="font-title text-xl lg:text-2xl block self-start text-brand-fourth">Author: </h4>
-							<p class="text-base lg:text-lg font-sans self-start"><?php the_author(); ?></p>
-							<?php
-								$get_author_id = get_the_author_meta('ID');
-								$get_author_gravatar = get_avatar_url($get_author_id, array('size' => 450));
-
-								echo '<img src="'.$get_author_gravatar.'" class="rounded-full w-24 lg:w-full my-4" alt="'.get_the_author().'" />';
-							?>
-						
-						</div>
-
-						<div class="mb-6">
-							<h4 class="font-title text-xl lg:text-2xl block text-brand-fourth">Post Tags:</h4>
-							<div class="mt-4 mb-6 flex flex-wrap gap-2 tags">
-								<?php if(has_tag()) : ?>
-									<?php the_tags('&#32', '&#32'); ?>
-								<?php else : ?>
-									<p>No post tags.</p>
-								<?php endif; ?>
-							</div>
-						</div>
-						
-						<?php get_sidebar(); ?>
-
-					</div>
-				</div>
 
 				</article>
 				<!-- /article -->

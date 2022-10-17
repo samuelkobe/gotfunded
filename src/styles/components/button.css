@@ -1,5 +1,5 @@
 .theme-button {
-    @apply w-fit justify-center pt-[6px] xl:pt-3 xl:pb-1 px-6 xl:px-8 rounded-full no-underline shadow-2xl inline-flex text-white font-sans font-semibold text-xl xl:text-2xl transition-colors duration-300 cursor-pointer;
+    @apply w-fit justify-center pt-[6px] lg:pt-1 xl:pt-3 xl:pb-1 px-6 xl:px-8 rounded-full no-underline shadow-2xl inline-flex text-white font-sans font-semibold text-xl xl:text-2xl transition-colors duration-300 cursor-pointer;
 }
 
 .theme-button.small {
@@ -18,6 +18,10 @@
     @apply bg-brand-dark_grey text-white hover:bg-brand-darkest_grey shadow-custom shadow-brand-darkest_grey;
 }
 
+.theme-button.dark_button {
+    @apply bg-[#151515] text-white hover:bg-brand-black shadow-custom shadow-brand-black;
+}
+
 .theme-button.header {
-    @apply text-xl xl:text-2xl m-0 shadow-sm #{!important};
+    @apply text-3xl px-4 xl:px-6 lg:text-base xl:text-lg m-0 shadow-sm #{!important};
 }

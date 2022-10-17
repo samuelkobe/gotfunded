@@ -305,23 +305,75 @@
                     "maxlength": 128
                 },
                 {
+                    "key": "field_6335fd6d9b797",
+                    "label": "Extra Content?",
+                    "name": "extra_content_toggle",
+                    "type": "true_false",
+                    "instructions": "Toggle the button on or off. Default 'off'.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "choose to show extra content below the tagline or not.",
+                    "default_value": 0,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No",
+                    "ui": 1
+                },
+                {
                     "key": "field_62851abf4b248",
                     "label": "Content",
                     "name": "content",
                     "type": "textarea",
                     "instructions": "Add content.",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6335fd6d9b797",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "",
+                        "width": "75",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
                     "maxlength": 512,
                     "rows": 4,
+                    "placeholder": "",
                     "new_lines": "br"
+                },
+                {
+                    "key": "field_6335fe1ede076",
+                    "label": "No Extra Content",
+                    "name": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6335fd6d9b797",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "This block's extra content is currently toggled off.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
                 },
                 {
                     "key": "field_628559b493f31",
@@ -640,5 +692,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662708947
+    "modified": 1664482898
 }

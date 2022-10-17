@@ -18,3 +18,4 @@ import '/src/styles/components/editor.css';
 
 // Plugin Override CSS
 import '/src/styles/plugins/mc4wp.css';
+import '/src/styles/plugins/convertkit.css';

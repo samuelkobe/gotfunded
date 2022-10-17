@@ -1,0 +1,44 @@
+{
+    "key": "group_6336770fe1431",
+    "title": "Blog Settings",
+    "fields": [
+        {
+            "key": "field_633677104445c",
+            "label": "Blog Preview text",
+            "name": "blog_preview_text",
+            "type": "textarea",
+            "instructions": "Add your blog posts preview text. This will be shown on the blog page before going into individual posts content.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 256,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 12,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1664515616
+}

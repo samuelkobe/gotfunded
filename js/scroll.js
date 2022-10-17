@@ -11,7 +11,7 @@ function scrollToTargetAdjusted(element) {
   });
 }
 
-document.querySelectorAll("nav ul li a").forEach((anchor) => {
+document.querySelectorAll("a.menu-anchor").forEach((anchor) => {
   anchor.addEventListener("click", function (a) {
     let href = a.target.href;
     let anchorId = this.getAttribute("data-title");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentAnchor != null) {
         scrollToTargetAdjusted(currentAnchor);
       }
-      console.log(currentAnchor);
+      // console.log(currentAnchor);
     }, 250);
   }
 });

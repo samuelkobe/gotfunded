@@ -1,7 +1,7 @@
 <div class="flex flex-wrap lg:flex-col lg:container lg:mx-auto items-center w-full h-full">
     <div class="absolute inset-0 bg-black w-full h-full visible lg:invisible pointer-events-none"></div>
 
-    <div class="flex h-full items-center w-64 lg:w-1/5 ml-4 lg:ml-0 z-20">
+    <div class="flex h-full items-center w-56 sm:w-64 lg:w-1/5 ml-4 lg:ml-0 z-20">
         <?php get_template_part('parts/brand') ?>
     </div>
 
@@ -14,16 +14,17 @@
         </svg>
     </button>
 
-    <div :class="[menuOpen ? 'translate-y-0 bg-black lg:bg-transparent h-[100vh] lg:h-full -z-10 lg:z-20 visible' : 'bg-brand-black lg:bg-transparent -translate-y-[100vh] h-full z-20 invisible lg:visible']" 
+    <div :class="[menuOpen ? 'translate-y-0 bg-black lg:bg-transparent h-auto border-b-4 border-brand-third_dark lg:border-none lg:h-full -z-10 lg:z-20 visible' : 'bg-brand-black lg:bg-transparent -translate-y-[100vh] h-full z-20 invisible lg:visible']" 
     class="flex flex-col lg:flex-row w-full lg:w-4/5 pointer-events-auto transform transition-transform-height duration-300 lg:duration-0 lg:translate-y-0 lg:transition-none lg:justify-end">
         <?php webokstarter_nav(); ?>
 
         <?php if ( get_field( 'header_button_toggle', 'option' ) == 1 ) : ?>
-            <div class="w-full h-[25vh] lg:h-full lg:w-auto flex flex-col lg:flex-row items-center lg:ml-2 lg:mr-4 mb-20 lg:mb-0">
+            <div class="w-full h-auto lg:h-full lg:w-auto flex flex-col lg:flex-row items-center lg:ml-2 lg:mr-4 mb-20 lg:mb-0">
                 <?php $header_button = get_field( 'header_button', 'option' ); ?>
                 <?php if ( $header_button ) : ?>
                     <div class="flex flex-row relative">
-                        <a class="theme-button alt header" href="<?php echo esc_url( $header_button['url'] ); ?>" target="<?php echo esc_attr( $header_button['target'] ); ?>"><?php echo esc_html( $header_button['title'] ); ?></a>
+                        <?php $data_title = formatAnchor(($header_button['url'] )); ?>
+                        <a class="theme-button alt header menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $header_button['url'] ); ?>" target="<?php echo esc_attr( $header_button['target'] ); ?>"><?php echo esc_html( $header_button['title'] ); ?></a>
                     </div>
                 <?php endif; ?>
             </div>

@@ -27,24 +27,30 @@ if (function_exists('add_theme_support')) {
     load_theme_textdomain('web-ok-starter', get_template_directory() . '/languages');
 
     // Custom logo support
-    $logo_width  = 64;
-    $logo_height = 64;
+    // $logo_width  = 64;
+    // $logo_height = 64;
 
-    $logo_defaults = array(
-        'height'               => $logo_height,
-        'width'                => $logo_width,
-        'unlink-homepage-logo' => false,
-    );
-    add_theme_support( 'custom-logo', $logo_defaults );
+    // $logo_defaults = array(
+    //     'height'               => $logo_height,
+    //     'width'                => $logo_width,
+    //     'unlink-homepage-logo' => false,
+    // );
+    // add_theme_support( 'custom-logo', $logo_defaults );
+
     add_editor_style( 'custom-editor-style.css' );
 }
 
 function webokstarter_custom_class_replace( $html ) {
-    $html = str_replace('custom-logo', 'flex shrink w-full', $html );
+    $html = str_replace('custom-logo', 'flex aspect-square', $html );
     return $html;
 }
 add_filter('get_custom_logo', 'webokstarter_custom_class_replace', 10);
 
+function cc_mime_types($mimes) {
+ $mimes['svg'] = 'image/svg+xml';
+ return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
  /*------------------------------------*\
   Theme Settings - Dynamic Styles required
