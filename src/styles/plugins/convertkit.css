@@ -15,11 +15,11 @@ div.seva-fields.formkit-fields {
 }
 
 .formkit-field input {
-    @apply w-full sm:w-56 min-w-1/2 lg:w-64 rounded-tl-full rounded-bl-full h-11 pt-4 px-4 #{!important};
+    @apply w-full lg:w-64 rounded-tl-full rounded-bl-full h-11 pt-[6px] px-4 focus:outline-none #{!important};
 }
 
 button.formkit-submit {
-    @apply w-fit h-11 p-0 m-0 overflow-hidden absolute -right-6 sm:-right-5 lg:-right-3 hover:-right-8 sm:hover:-right-6 transition-all justify-center rounded-full no-underline inline-flex font-sans font-semibold duration-300 cursor-pointer text-xl xl:text-2xl bg-brand-fourth text-white hover:bg-brand-fourth_dark shadow-custom shadow-brand-fourth_dark #{!important};
+    @apply w-[72px] h-11 p-0 m-0 overflow-hidden absolute top-0 -right-6 sm:-right-5 lg:-right-3 hover:-right-8 sm:hover:-right-6 transition-all items-center justify-center rounded-full no-underline inline-flex font-sans font-semibold duration-300 cursor-pointer text-xl xl:text-2xl bg-brand-fourth text-white hover:bg-brand-third shadow-custom shadow-brand-darkest_grey #{!important};
 }
 
 .formkit-submit span {

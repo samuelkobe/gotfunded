@@ -20,8 +20,8 @@
 
 		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-		<script src="https://unpkg.com/vue@3"></script>
-		<!-- <script src="https://unpkg.com/vue@3.2.33/dist/vue.global.prod.js"></script> -->
+		<!-- <script src="https://unpkg.com/vue@3"></script> -->
+		<script src="https://unpkg.com/vue@3.2.33/dist/vue.global.prod.js"></script>
 
 		<script src="https://kit.fontawesome.com/effc7c677e.js" crossorigin="anonymous"></script>
 

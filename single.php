@@ -2,7 +2,7 @@
 
 	<main role="main">
 		<!-- section -->
-		<section class="bg-white pt-36 lg:pt-48 pb-24">
+		<section class="bg-white pt-36 lg:pt-48 pb-24 my-12 lg:my-20">
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -1,21 +1,45 @@
-
 			<!-- footer -->
 			<footer class="footer bg-black text-white" role="contentinfo">
 
 				<div class="contained">
 
-					<?php if ( have_rows( 'footer_form', 'option' ) ) : ?>
-						<?php while ( have_rows( 'footer_form', 'option' ) ) : the_row(); ?>
-							<div class="flex w-full justify-center lg:justify-end">
-								<div class="w-full flex flex-col items-center lg:items-end">
-									<h3 class="w-full lg:w-auto text-center lg:text-left font-title font-medium text-lg lg:text-xl mb-2 lg:mb-4"><?php the_field( 'footer_form_title', 'option' ); ?></h3>
-									<div class="w-full flex justify-center lg:justify-end transform -translate-x-3">
-										<?php the_field( 'footer_form_field', 'option' ); ?>
-									</div>
-								</div>
+
+					<div class="flex w-full justify-center lg:justify-end">
+						<div class="w-full flex flex-col items-center lg:items-end">
+							<h3 class="w-full lg:w-auto text-center lg:text-left font-title font-medium text-lg lg:text-xl mb-2 lg:mb-4 text-white">Stay up-to-date with GotFunded.</h3>
+							<div id="form-overrides" class="w-full flex justify-center lg:justify-end transform -translate-x-3">
+
+							<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      							<form 	action="https://app.convertkit.com/forms/3700994/subscriptions"
+										class="seva-form formkit-form"
+										method="post"
+										data-sv-form="3700994"
+										data-uid="ef400146f4"
+										data-format="inline"
+										data-version="5"
+										data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:true},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
+										min-width="400 500 600 700 800">
+										
+										<div data-style="clean">
+											<ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+											<div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+											<div class="formkit-field">
+												<input 	class="formkit-input" 
+														name="email_address"
+														aria-label="example@email.com"
+														placeholder="example@email.com"
+														required=""
+														type="email"
+														style="color: rgb(45, 45, 45); border-color: rgb(177, 177, 177); font-weight: 400;">
+											</div>
+										
+										<button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(226, 45, 87); border-radius: 9999px; font-weight: 400;">
+											<span class="flex w-full h-full items-center justify-center pt-2">→</span>
+										</button>
+    							</form>
 							</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
+						</div>
+					</div>
 
 					<div class="w-full flex flex-col md:flex-row md:justify-between md:flex-wrap py-4 md:py-8">
 
@@ -34,9 +58,6 @@
 					</div>
 
 				</div>
-
-				<?php // footer copyright bottom part ?>
-				<?php get_template_part('parts/footer/developer') ?>
 					
 			</footer>
 			<!-- /footer -->

@@ -67,7 +67,7 @@ if ( have_rows( 'id' ) ) : ?>
 
                             <?php
                                 if ($tag_color == 'fourth') {
-                                    $button_color = 'main';
+                                    $button_color = 'main-transition';
                                 } elseif ($tag_color == 'third') {
                                     $button_color = 'alt';
                                 } else {

@@ -10,6 +10,10 @@
     @apply bg-brand-fourth text-white hover:bg-brand-fourth_dark shadow-custom shadow-brand-fourth_dark;
 }
 
+.theme-button.main-transition {
+    @apply bg-brand-fourth text-white hover:bg-brand-third shadow-custom shadow-brand-darkest_grey;
+}
+
 .theme-button.alt {
     @apply bg-brand-third text-white hover:bg-brand-third_dark shadow-custom shadow-brand-third_dark;
 }
@@ -19,7 +23,11 @@
 }
 
 .theme-button.dark_button {
-    @apply bg-[#151515] text-white hover:bg-brand-black shadow-custom shadow-brand-black;
+    @apply bg-[#151515] text-white hover:text-[#151515] hover:bg-white shadow-custom shadow-brand-darkest_grey;
+}
+
+.theme-button.dark_button_blue {
+    @apply bg-[#151515] text-white hover:bg-brand-third shadow-custom shadow-brand-darkest_grey;
 }
 
 .theme-button.header {

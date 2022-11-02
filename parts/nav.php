@@ -14,7 +14,7 @@
         </svg>
     </button>
 
-    <div :class="[menuOpen ? 'translate-y-0 bg-black lg:bg-transparent h-auto border-b-4 border-brand-third_dark lg:border-none lg:h-full -z-10 lg:z-20 visible' : 'bg-brand-black lg:bg-transparent -translate-y-[100vh] h-full z-20 invisible lg:visible']" 
+    <div :class="[menuOpen ? 'translate-y-0 bg-black lg:bg-transparent h-auto border-b-4 border-brand-fourth_dark lg:border-none lg:h-full -z-10 lg:z-20 visible' : 'bg-brand-black lg:bg-transparent -translate-y-[100vh] h-full z-20 invisible lg:visible']" 
     class="flex flex-col lg:flex-row w-full lg:w-4/5 pointer-events-auto transform transition-transform-height duration-300 lg:duration-0 lg:translate-y-0 lg:transition-none lg:justify-end">
         <?php webokstarter_nav(); ?>
 
@@ -24,7 +24,7 @@
                 <?php if ( $header_button ) : ?>
                     <div class="flex flex-row relative">
                         <?php $data_title = formatAnchor(($header_button['url'] )); ?>
-                        <a class="theme-button alt header menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $header_button['url'] ); ?>" target="<?php echo esc_attr( $header_button['target'] ); ?>"><?php echo esc_html( $header_button['title'] ); ?></a>
+                        <a class="theme-button main-transition header menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $header_button['url'] ); ?>" target="<?php echo esc_attr( $header_button['target'] ); ?>"><?php echo esc_html( $header_button['title'] ); ?></a>
                     </div>
                 <?php endif; ?>
             </div>

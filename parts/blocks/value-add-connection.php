@@ -136,7 +136,7 @@ if ( have_rows( 'id' ) ) : ?>
                 <?php if ( $button_link ) : ?>
                     <div class="flex flex-row relative">
                         <?php $data_title = formatAnchor($button_link['url']); ?>
-                        <a class="theme-button main menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $button_link['url'] ); ?>" target="<?php echo esc_attr( $button_link['target'] ); ?>"><?php echo esc_html( $button_link['title'] ); ?></a>
+                        <a class="theme-button main-transition menu-anchor" data-title="<?php echo $data_title; ?>" href="<?php echo esc_url( $button_link['url'] ); ?>" target="<?php echo esc_attr( $button_link['target'] ); ?>"><?php echo esc_html( $button_link['title'] ); ?></a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
