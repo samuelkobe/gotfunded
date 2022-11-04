@@ -83,19 +83,13 @@ if ( have_rows( 'id' ) ) : ?>
                                 <span class="z-20 flex rounded-tl-lg rounded-tr-lg w-full h-8 <?php echo 'bg-brand-' . $tag_color; ?>"></span>
                             <?php } ?>
                             <div class="mt-6 py-4">
-                                <h3 class="font-semibold font-title text-lg lg:text-xl text-brand-dark_grey uppercase w-full text-center"><?php the_sub_field( 'name' ); ?></h3>
+                                <h3 class="font-title text-lg lg:text-xl text-brand-dark_grey w-full text-center"><?php the_sub_field( 'name' ); ?></h3>
 
-                                <div class="flex flex-row items-center justify-center sub_price monthly relative w-full my-4 text-5xl leading-none text-brand-black font-sans font-semibold" title="$<?php the_sub_field( 'monthly_price' ); ?>">
-                                    <p class="relative ml-16">
-                                        $<?php the_sub_field( 'monthly_price' ); ?>
-                                        <span class="text-brand-light_grey text-lg lg:text-xl -ml-2">/month</span>
-                                    </p>
+                                <div class="flex flex-col items-center justify-center sub_price monthly relative w-full my-4 leading-none text-brand-black font-sans" title="$<?php the_sub_field( 'monthly_price' ); ?>">
+                                    <p class="text-6xl tracking-tight relative"><span class="absolute -top-3 -left-3 text-3xl">$</span><?php the_sub_field( 'monthly_price' ); ?></p>
+                                    <p class="text-brand-light_grey text-sm lg:text-base font-norma font-title">per month</p>
+                                    <p class="text-brand-light_grey text-sm lg:text-base font-normal font-title line-through -m-1">$<?php the_sub_field( 'original_monthly_price' ); ?> / month</p>
                                 </div>
-
-                                <?php if (get_sub_field( 'tag' ) != null || get_sub_field( 'tag' ) != '') { ?>
-                                    <p class="w-full text-center text-sans text-sm lg:text-base text-brand-dark_grey font-semibold -mt-4 pb-4"><?php the_sub_field( 'tag' ); ?></p>
-                                <?php } ?>
-
 
                                 <div class="flex justify-center">
                                     <?php $monthly_button = get_sub_field( 'monthly_button' ); ?>
@@ -106,7 +100,11 @@ if ( have_rows( 'id' ) ) : ?>
                                     <?php endif; ?>
                                 </div>
 
-                                <div class="flex flex-col my-6 mb-4 md:mb-6 px-4 lg:px-9 text-brand-dark_grey">
+                                <?php if (get_sub_field( 'tag' ) != null || get_sub_field( 'tag' ) != '') { ?>
+                                    <p class="w-full text-center text-sans text-sm lg:text-base text-brand-dark_grey font-semibold mt-6"><?php the_sub_field( 'tag' ); ?></p>
+                                <?php } ?>
+
+                                <div class="flex flex-col my-6 mb-4 md:mb-6 px-6 lg:px-9 text-brand-dark_grey border-t-2 border-gray-100 pt-6">
                                     <?php $points_title = get_sub_field( 'value_added_pointed_title' ); ?>
                                     <?php if ( have_rows( 'value_point' ) ) : ?>
                                         <h4 class="font-title font-semibold text-brand-black text-lg lg:text-xl mb-1 lg:mb-2"><?php echo $points_title; ?></h4>

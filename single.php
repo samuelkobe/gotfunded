@@ -21,10 +21,10 @@
 
 						<h1 class="text-4xl lg:text-6xl 2xl:text-7xl text-brand-black font-title font-bold mt-4 lg:mt-8"><?php the_title(); ?></h1>
 
-						<div class="flex flex-row items-center mt-2 lg:mt-1">
-							<?php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-8 lg:w-12 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
-							<p class="text-sm lg:text-base font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?php the_author(); ?></p>
-						</div>
+						<!-- <div class="flex flex-row items-center mt-2 lg:mt-1">
+							<?//php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-8 lg:w-12 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
+							<p class="text-sm lg:text-base font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?//php the_author(); ?></p>
+						</div> -->
 					</div>
 
 					<?php // IMAGE SECTION ?>
@@ -39,15 +39,15 @@
 						<?php the_content(); // Dynamic Content ?>
 					</div>
 
-					<div class="pt-4 lg:pt-8 border-t-2 flex flex-col items-center lg:items-start lg:flex-row lg:gap-x-16">
+					<!-- <div class="pt-4 lg:pt-8 border-t-2 flex flex-col items-center lg:items-start lg:flex-row lg:gap-x-16">
 						<div class="w-full lg:w-1/5 flex flex-row justify-center lg:justify-start items-center mt-1 mb-6 lg:mb-0">
-							<?php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-16 h-16 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
-							<p class="text-base lg:text-lg font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?php the_author(); ?></p>
+							<?//php echo '<img src="'.$get_author_gravatar.'" class="rounded-full aspect-square w-16 h-16 object-cover border-2 border-brand-black" alt="'.get_the_author().'" />';?>
+							<p class="text-base lg:text-lg font-sans font-bold text-brand-darkest_grey ml-2 mt-1"><?//php the_author(); ?></p>
 						</div>
 						<div class="w-full lg:w-4/5">
-							<p class="text-base lg:text-lg text-brand-dark_grey"><?php echo $get_author_description; ?></p>
+							<p class="text-base lg:text-lg text-brand-dark_grey"><?//php echo $get_author_description; ?></p>
 						</div>
-					</div>
+					</div> -->
 
 					<?php // EDIT SECTION ?>
 					<?php if(current_user_can('editor') || current_user_can('administrator')) : ?>
